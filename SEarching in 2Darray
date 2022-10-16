@@ -1,0 +1,27 @@
+public class twod {
+    public static void main(String[] args) {
+        int[][] arr = {
+                {10,20,30,40},
+                {15,25,35,45},
+                {30,36,38,48},
+                {33,39,42,51}
+        };
+        System.out.println(search2d(arr,35));
+    }
+    static int[] search2d(int[][] arr,int target ){
+        int r = 0;
+        int c = arr.length-1;
+
+        while(r< arr.length && c>=0){
+            if(arr[r][c] == target){
+                return new int[] {r,c};
+            }
+            if(arr[r][c] < target){
+                r++;
+            }else{
+                c--;
+            }
+        }
+        return new int[] {-1,-1};
+    }
+}
